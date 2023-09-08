@@ -39,8 +39,11 @@ function game(){
         let playerSelection = prompt("Enter your rock paper scissors play");
         const computerSelection = getComputerChoice();
         let playRound = round(playerSelection,computerSelection);
-        console.log(playRound);
+        
+        const resultsElement = document.getElementById("results");
+        resultsElement.innerHTML += `<p>Round ${i}: ${playRound} </p>`;
     }
 }
 
-game();
+const startButton = document.getElementById("start-Button");
+startButton.addEventListener("click", game)
